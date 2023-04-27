@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#left-background-mobile {
+  visibility: hidden;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+  grid-template-areas: "left left left left .  . right right right right " "left left left left . .  right right right right " "left left left left . . right right right right " "left left left left . . right right right right ";
+}
+.left-section {
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(30, 10%);
+  grid-area: 1/1/10/10;
+}
+/* new grid container to move both cards */
+#cards {
+  grid-area: 2/2/5/7;
+  grid-template-columns: repeat(15, 10%);
+  display: grid;
+  grid-template-rows: repeat(15, 10%);
+  width: 604px; /* to keep the cvv responsive I had to state the width of the grid in all screens */
+}
+/* moving first card inside the card grid */
+.box0 {
+  grid-area: 3/3/9/10;
+  z-index: 150;
+}
+/* moving the back card inside the card grid */
+.box1 {
+  grid-area: 9/4/13/10;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: repeat(12, 10%);
+  grid-template-columns: repeat(13, 10%);
+}
+.box3 {
+  grid-template-rows: repeat(10, 10%);
+  grid-template-columns: repeat(10, 10%);
+  display: grid;
+  grid-area: 2/3/4/7;
+  width: 430px;
+  height: 250px;
+}
+#card-front {
+  z-index: 5;
+  box-shadow: 10px 11px 23px -5px rgba(0, 0, 0, 0.66);
+  margin-bottom: 25px;
+  width: 400px;
+}
+#card-back {
+  width: 400px;
+}
+.card-name {
+  z-index: 300;
+  color: white;
+  grid-area: 10/2/10/7;
+}
+
+.card-number {
+  z-index: 300;
+  color: white;
+  grid-area: 8/2/10/10;
+  font-size: x-large;
+}
+
+.card-date {
+  z-index: 300;
+  color: white;
+  grid-area: 10/9/10/12;
+}
+.card-logo {
+  z-index: 300;
+  color: white;
+  grid-area: 3/3/4/4;
+  padding: 15px;
+}
+#three-digits-card {
+  color: white;
+  z-index: 300;
+  grid-area: 10/10/11/10;
+  padding-right: 5px;
+}
+
+.right-section {
+  grid-area: right;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+}
+.form {
+  grid-area: 5/4/7/5;
+  padding: 50px;
+}
+.form-hidden {
+  visibility: hidden;
+  grid-area: 5/4/7/5;
+  padding: 50px;
+}
+.form input {
+  margin-bottom: 15%;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  border-color: rgb(168, 165, 165);
+}
+input:focus {
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      hsl(249, 99%, 64%),
+      hsl(278, 94%, 30%)
+    )
+    1;
+}
+label {
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  font-size: x-small;
+  display: block;
+  width: max-content;
+  letter-spacing: 1px;
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 6px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.date-exp input,
+.date-exp2 input,
+.cvv-num input {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.date-exp input,
+.date-exp2 input {
+  margin-left: 0;
+  width: 60px;
+}
+.cvv-num input {
+  width: 125px;
+}
+.date-exp2 {
+  position: relative;
+  right: 33px;
+  top: 7px;
+}
+
+#firstname,
+#number {
+  padding: 5px;
+  width: 280px;
+}
+#year {
+  margin-bottom: 12px;
+}
+.btn {
+  width: 280px;
+  height: 40px;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.error {
+  visibility: visible;
+  color: hsl(0, 100%, 66%);
+  width: max-content;
+  font-size: x-small;
+  margin-top: 1px;
+}
+.success {
+  display: none;
+}
+.confirm {
+  visibility: hidden;
+  grid-area: 5/4/7/5;
+  padding: 50px;
+  width: max-content;
+  text-align: center;
+}
+#img-confirm {
+  margin-bottom: 30px;
+}
+.heading-confirm {
+  margin-bottom: 14px;
+  letter-spacing: 3px;
+}
+.p-confirm {
+  letter-spacing: 1px;
+  color: grey;
+}
+.button-confirm {
+  margin-top: 26px;
+  width: 280px;
+  height: 40px;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.confirm-visible {
+  visibility: visible;
+  grid-area: 5/4/7/5;
+  padding: 50px;
+  width: max-content;
+  text-align: center;
+}
+
+/* 
+320px - Extra small devices: Smartphones in portrait orientation
+480px - Small devices: Smartphones in landscape orientation
+768px - Medium devices: Tablets and small desktop screens
+992px - Large devices: Desktop screens and small laptops
+1200px - Extra large devices: Large laptops and desktop screens */
+
+@media only screen and (max-width: 900px) {
+  #left-background {
+    display: none;
+  }
+  #card-front,
+  #card-back {
+    width: 300px;
+    height: 200px;
+  }
+  .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(18, 10%);
+  }
+  .left-section {
+    grid-column-start: 1;
+    grid-column-end: 8;
+  }
+  .right-section {
+    grid-area: 7/2/15/7;
+  }
+  #left-background-mobile {
+    visibility: visible;
+    width: 500px;
+  }
+  #cards {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  #card-front {
+    z-index: 5;
+    box-shadow: 10px 11px 23px -5px rgba(0, 0, 0, 0.66);
+    z-index: 100;
+  }
+  .box1 {
+    grid-area: 1/1/13/9;
+  }
+  .box0 {
+    grid-area: 6/2/6/10;
+  }
+  .box3 {
+    grid-area: 6/1/6/7;
+    padding: 27px;
+  }
+  #card-back {
+    z-index: 100;
+  }
+
+  .card-number {
+    z-index: 300;
+    color: white;
+    font-size: x-large;
+    grid-area: 6/2/7/8;
+  }
+  .card-logo {
+    z-index: 300;
+    color: white;
+    z-index: 300;
+    grid-area: 6/2/7/3;
+  }
+  #card-logo-img {
+    width: 60px;
+  }
+  .card-name {
+    z-index: 300;
+    color: white;
+    font-size: small;
+    grid-area: 8/2/9/5;
+  }
+  .card-date {
+    z-index: 300;
+    color: white;
+    font-size: small;
+    grid-area: 8/8/10/10;
+    padding: 10px;
+  }
+  #three-digits-card {
+    color: white;
+    z-index: 300;
+    grid-area: 5/5/6/6;
+  }
+  .form {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+}

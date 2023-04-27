@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.left-section {
+  grid-area: 1 / 1 / 6 / 3;
+}
+.right-section {
+  display: grid;
+  grid-area: 1 / 4 / 6 / 6;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 0px;
+}
+.form {
+  display: grid;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  margin-bottom: -90px;
+  gap: 17px;
+}
+.name {
+  grid-area: 3 / 5 / 4 / 6;
+}
+.form-num {
+  grid-area: 4 / 5 / 5 / 6;
+}
+.date-exp {
+  grid-area: 5 / 5 / 6 / 6;
+}
+.date-exp input {
+  width: 50px;
+}
+
+.date-exp2 {
+  grid-area: 5 / 6 / 6 / 7;
+  position: relative;
+  top: 19px;
+  margin-left: -180%;
+}
+.date-exp2 input {
+  width: 50px;
+}
+.cvv-num {
+  grid-area: 5 / 7 / 6 / 8;
+  margin-left: -69px;
+}
+.cvv-num input {
+  width: 75px;
+}
+button {
+  width: 230px;
+  height: 40px;
+  background-color: rgb(10, 10, 79);
+  color: white;
+  border-radius: 4px;
+  grid-area: 6 / 4 / 6 / 8;
+  text-align: center;
+  cursor: pointer;
+}
+#left-background {
+  position: absolute;
+  height: max-content;
+}
+/* card details */
+#cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#card-front {
+  /* new added */
+  position: relative;
+  /* new added */
+  z-index: 5;
+  margin-bottom: 10%;
+  transform: translate(16%, 87%);
+  box-shadow: 10px 11px 23px -5px rgba(0, 0, 0, 0.66);
+}
+.card-name {
+  /* new added */
+  position: absolute;
+  top: 64%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: aliceblue;
+  padding: 1rem;
+  /* new added */
+}
+.card-number {
+  position: absolute;
+  top: 58%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: x-large;
+  color: aliceblue;
+  padding: 1rem;
+}
+.card-date {
+  position: absolute;
+  top: 64%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: aliceblue;
+  padding: 1rem;
+}
+.card-logo {
+  position: absolute;
+  top: 39%;
+  left: 11%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: aliceblue;
+  padding: 1rem;
+}
+#card-back {
+  z-index: 5;
+  transform: translate(32%, 71%);
+  box-shadow: 10px 11px 32px -5px rgba(0, 0, 0, 0.66);
+}
